@@ -9,6 +9,7 @@
     "@strapi/plugin-i18n": "4.7.0-beta-0",
     "better-sqlite3": "8.0.1"
   },
+  
   "name": "cloud-blog",
   "private": true,
   "version": "0.1.0",
