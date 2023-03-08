@@ -10,6 +10,7 @@ module.exports = ({ env }) => ({
       schema: env("DATABASE_SCHEMA"), // Not required
       ssl: {
         ca: env("DATABASE_CA"),
+        rejectUnauthorized: true,
       },
     },
     debug: false,
