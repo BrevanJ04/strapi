@@ -33,12 +33,6 @@
         "videos"
       ]
     },
-    "author": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::author.author",
-      "inversedBy": "articles"
-    },
     "category": {
       "type": "relation",
       "relation": "manyToOne",
@@ -53,6 +47,12 @@
         "shared.rich-text",
         "shared.slider"
       ]
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "articles"
     }
   }
 }
