@@ -3,32 +3,27 @@
 const populate = {
   user: {
     fields: ["firstName", "lastName", "bio", "email"],
-    populate: "*",
   },
   cover: {
     fields: ["name", "alternativeText", "caption", "width", "height", "url"],
-    populate: "*",
   },
   blocks: {
     populate: {
       file: {
         fields: ["name", "alternativeText", "caption", "width", "height", "url"],
-        populate: "*",
       }
     }
   }
 }
 
 /**
- * `findBySlug` middleware
+ * `article` middleware
  */
 
 module.exports = (config, { strapi }) => {
-  // Add your own logic here.
   return async (ctx, next) => {
-    ctx.query.populate = populate;
-    strapi.log.info('In findBySlug middleware.');
-
+    ctx.query = { populate };
+    strapi.log.info('Article middleware.');
     await next();
   };
 };
