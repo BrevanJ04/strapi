@@ -2,12 +2,12 @@ module.exports = {
   routes: [
     {
       method: 'GET',
-      path: '/article/get-by-slug/:slug',
+      path: '/articles/find-by-slug/:slug',
       handler: 'article.findBySlug',
       config: {
         policies: [],
         middlewares: [
-          "api::article.find-by-slug"
+          "api::article.article-middleware"
         ],
       }
     }
